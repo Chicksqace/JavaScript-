@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			/* 
+			定义一个函数，判读一个数字是否为偶数，如果是返回true，否则返回false
+			 
+			 定义一个函数，可以根据半径计算一个圆的面积，并返回计算结果
+			 */
+			/* function isOu(num){
+				return num%2==0;	
+			}
+			var result=isOu(3);
+			console.log(result); */
+			/* function mianji(r){
+				return 3.14*r*r;
+			}
+			var result=mianji(3);
+			cnonsole.log(result); */
+			/* 
+			 创建一个函数,可以在控制台中输入一个人的信息
+			 可以输入的name age gender address
+			 */
+			/* function sayHello(name,age,gender,address){
+				console.log("我的名字"+name+",年龄"+age+"性别"+gender+"住址"+address)
+			}
+			var obj={
+				name:"小明",
+				age:18,
+				address:"城东",
+				gender:"男"
+			} */
+			/* sayHello("小明",18,"男","城东"); */
+			/* sayHello(obj); */
+			/* 实参可以是一个对象，也可以是一个函数 */
+			function mianji(r){
+				return 3.14*r*r;
+			}
+			function fun(a){
+				console.log("a="+a);
+				//a(obj);
+			}
+			//fun(sayHello);
+			//fun(function all(){alert("hello")});
+			/* 
+			 mianji()
+				调用函数
+				相当于使用的是函数的返回值
+			mianji
+				函数对象
+				相当于直接使用函数对象
+			 */
+			fun(mianji());
+			fun(mianji(1));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+		/*
+		 * 	大家都知道，男大当婚，女大当嫁。那么女方家长要嫁女儿，当然要提出一定的条件： 
+		 *	高：180cm以上; 富:1000万以上; 帅:500以上;
+		 *	如果这三个条件同时满足，则:'我一定要嫁给他'
+		 *	如果三个条件有为真的情况，则:'嫁吧，比上不足，比下有余。' 
+		 *	如果三个条件都不满足，则:'不嫁！' 
+		 */
+	/* 	var height=prompt("请输入你的身高(CN)");
+		var money=prompt("请输入你的财富(万)");
+		var face=prompt("请输入你的颜值(PX)");
+		/* alert(height+","+money+","+face); */
+		if(height >180 && money > 1000 && face > 500){
+			alert("嫁给你");
+		}else if(height >180 || money > 1000 || face > 500){
+			alert("可以吧");
+		}else{
+			alert("不嫁");
+		} */
+		
+		/*
+		 * 	编写程序，由键盘输入三个整数分别存入变量num1、num2、num3，
+		 * 	对他们进行排序，并且从小到大输出。
+		 */
+			//	获取用户输入的三个数
+			/* prompt()函数返回值为String类型 */
+			var num1= +prompt("1数");
+			var num2= +prompt("2数");
+			var num3= +prompt("3数");
+			alert(typeof num1);
+		//找到三个数最小值
+		if(num1 < num2 && num1<num3){
+			//num1最小，比较num2和num3
+			if(num2 < num3){
+				//num1 num2 num3
+				alert(num1+num2+num3);
+			}else{
+				alert(num1+num3+num2);
+			}
+		}else if(num2 < num1 && num2 <num3){
+			
+		}if(){
+			
+		}else{
+			
+		}
+		var num=20;
+		if(num=10){//相当于写了true，永远为真，用俩个等号
+			alert("111111");
+		}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

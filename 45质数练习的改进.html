@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			//测试如下的程序的性别
+			//在程序执行前，开启计时器
+			//console.time(“计数器的名称”)可以用来开启一个计时器
+			//它需要一个字符串作为参数，这个字符串将成为计数器的标识
+			console.time("test");
+			for(var i=2;i<=10000;i++){
+				var flag=true;
+			for(var j=2;j<=Math.sqrt(i);j++){//修改j<=Math.sqrt(i),缩小到8.79833984375 ms
+				
+				if(i%j==0){
+					//如果进入这个判断说明不是质数，考虑性能，直接结束
+					flag=false;
+					 break;//不加break是162.125ms加break是46.85986328125 ms
+				}
+				}
+				if(flag==true){
+					console.log(i);
+				}
+			}
+			//终止计数器
+			//console.timeEnd()用来停止一个计时器，需要计时器的名称作为参数
+			console.timeEnd("test")
+			/* 
+			 36
+			 1 36
+			 2 18
+			 3 12
+			 4 9
+			 6 6
+			 */
+			/* 可以通过Math.sqrt()对一个数进行开方 */
+			/* var result=Math.sqrt(4); */
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

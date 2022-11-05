@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* js中为我们提供了三种逻辑运算符
+			 ！非
+					可以用来对一个值进行非运算
+					对一个布尔值取反操作
+					true变false
+					如果对非布尔值进行运算，会转换为布尔值然后取反
+					所以我们可以对非布尔值的数转换为布尔值！！
+			 &&与
+					可以对符号俩侧的值进行与计算，就是java中的 并且
+					只要一个为false就返回false，只有俩个值都为true才为true
+					在JS中的“与”属于短路的与，如果第一个为false就不会看第二的值
+			 
+			 ||或
+					只要有一个true就返回true
+					在JS中的“或”属于短路的与，如果第一个为true就不会看第二的值*/
+			 var a=true;
+			 a=!a;
+			 var b=10;
+			 b=!b;
+			 //只要一个为false就返回false
+			 var result=true && false;//false
+			 //true && alert("看我出不出来")出来
+			 //false && alert("看我出不出来")没出来
+			 //只要有一个true就返回true
+			 result=false||false//false
+			 result=true||false//true
+			 result=true||true
+			 console.log(typeof b);//boolean
+			 console.log(b);//false
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

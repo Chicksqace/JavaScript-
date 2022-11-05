@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 运算符也叫操作符
+				通过运算符可以对一个或多个值进行运算,并获取运算结果
+				比如：typeof就是运算符，可以来获取一个值的类型
+					它会将该值的类型以字符串的形式返回
+					number string boolean undefined object
+				
+				算术运算符
+						当对非Number类型的值进行运算时，会将这些值转换为Number然后在运算
+							任何值和NaN运算，结果还是NaN
+					+ 
+						可以对俩个值进行加法运算，并将结果返回
+						如果对俩个字符串进行加法运算，则会拼串
+							会将俩个字符串拼接为一个字符串，并返回
+						任何的值和字符串做加法运算，都会先转换为字符串，然后在字符串做拼串操作
+					-
+					*
+					/
+					%
+						取余
+					*/
+				/* var a=123;
+				var result=typeof a; */
+				/* console.log(typeof result); */
+				/* result=a+1;
+				result=456+789;
+				result=true+1;//2
+				result=true+false//1
+				result=2+null;//2 */
+				/* result=2+NaN;//NaN */
+				/* var a="112,"+
+					  "234,"+
+				      "244,";
+				console.log(a); */
+				var result=123+"1";
+				result =true + "hello";//truehello
+				//任何的值和字符串做加法运算，都会先转换为字符串，然后在字符串做拼串操作
+				/* 我们可以利用这个特点，来将一个任意的数据类型转换为String
+				 我们只需要为任意的数据类型+一个“”即和转换为string
+				 这是一个隐式的类型转换，由我们的游览器自动完成，实际上调用了String函数*/
+				console.log(result);
+				var c=123;
+				c=c+"我把c变成字符串";
+				console.log(typeof c);
+				console.log("c="+c);
+				result=1+2+"3";//33
+				result="1"+2+3;//123
+				result=100-5;
+				result=100-true;
+				result=100-"1";//99
+				result=2*2;
+				result=2*"8";
+				result=2*undefined;
+				result=2*null;
+				result=3/2;
+				result=9%4;
+				/* 任何值做- * /运算时都会自动转换为Number
+				 我们可以利用这一特点做隐式类型转换*/
+				console.log(result);
+				var d="123";
+				d=d-0;
+				console.log(typeof d);
+				console.log("d="+d);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			/* 将其他的数据类型转换为Number 
+			   转换方式一
+					使用Number()函数
+					字符串》数字
+					1.如果是纯数字的字符串，则直接将其转换为数字
+					2.如果字符串中非数字内容，则转换为NaN
+					3.如果字符串是一个空串或者一个全是空格的字符串，则转换为0
+					布尔》数字
+						true 转换为1
+						false 转换为0
+						null >数字 0
+						undefined>数字 NaN
+				转换方式2
+					-这种方式专门用来对付字符串
+					paresInt()把一个字符串转换为一个整数
+					parseFloat把一个字符串转换为一个浮点数*/
+						
+			var a="  ";
+			//调用Number()函数来将a转换为Number类型
+			a=true;
+			a=null;
+			/* a=undefined(a); */
+			a=Number(a);
+			a="123px444";
+			/* a=Number(a); */
+			a=parseInt(a);
+			/* parseInt()可以将一个字符串中的有效的整数内容去出来，
+			 然后转换为Number*/
+			 a="123.4343px";
+			 /*parseFloat作用和parseInt()一样，不同的是取浮点数 */
+			 a=parseFloat(a);
+			 /*如果对非String使用parseInt()或parseFloat（）
+			  他会先转换为string，然后操作*/
+			 a=true;
+			 a=parseInt(a);
+			 a=123.323;
+			 a=parseInt(a);
+			console.log(typeof a);
+			console.log(a);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

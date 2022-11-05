@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript">
+			/* >
+			 >=
+			 <
+			 <=
+			 关系成立返回true，否则返回false
+			 非数值的情况
+				对于非数值进行比较时，会转换为数字然后比较
+				如果符号俩侧的值都为字符串，不会将其转回为数字进行比较
+					而是分别比较俩个的Unicode
+				
+			 */
+			console.log(1>=true);//true
+			console.log(10>null);//true
+			//任何值和NaN比较都是false
+			console.log(10<="hello");//false
+			//比较俩个字符串时，比较的是字符串的字符编码
+			console.log("11"<"5");//true
+			//比较字符编码是一位一位进行比较,如果俩位一样比较下位
+			console.log("abc"<"a");//false
+			//如果比较的俩个字符串型的数字，可能会得到不可预期的结果
+			//注意:在比较俩个字符串的数字时，一定一定要转型
+			console.log("1234354"<+"5");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			/* 假如投资的年利率为5%，试求从1000块增长到5000块，需要花费多少年 */
+			/* var moneny=1000;
+			var year=0;
+			while(moneny < 5000){
+				moneny=moneny*1.05;
+				year++;
+			}
+			console.log(year); */
+			while(true){
+				var score=prompt("输入小明的期末成绩（0-100）:");
+				if(score>=0 && score<=100){
+					break;
+				}
+				alert("请输入有效的数字")
+			}
+			if(score>100||score<0 || isNaN((score))){
+				alert("不行")
+			}else{
+			if (score==100){
+				alert("1");
+			}else if (score>=80){
+				alert("2");
+			}else if (score>=60)
+			{
+				alert("3");
+			}else{
+				alert("4")
+			}
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
