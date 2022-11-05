@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#box1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				// 鼠标滚轮向上，box变长，反之变短
+				var box1=document.getElementById("box1");
+				// onwheel鼠标滚轮滚动的事件，会在滚轮滚动时触发
+				box1.onwheel=function(event){
+					// event.wheelDelta;可以获取鼠标滚轮的方向
+					// 向上150，向下-150
+					// wheelDelta这个值我们不看大小，只看正负
+					if(event.wheelDelta>0){
+						box1.style.height=box1.clientHeight-10+"px"
+						}else{
+						box1.style.height=box1.clientHeight+10+"px"
+						}
+						// 当滚轮滚动时，如果游览器有滚动条，滚动条也会随之滚动
+						// 这是游览器的默认行为，可以取消
+						return false;
+					}
+					
+					
+				}
+
+		</script>
+	</head>
+	<body style="height: 2000px;">
+		<div id="box1"></div>
+	</body>
+</html>

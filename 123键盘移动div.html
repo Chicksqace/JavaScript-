@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#box1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: absolute;
+			}
+		</style>
+		<script>
+			// 使div可以根据不同的方向键向不同方向移动
+			// 按左键，div向左移动
+			// 。。。
+			window.onload=function(){
+				document.onkeydown=function(event){
+					// 37-40左到下
+					// 设置一个变量来表示速度
+					var speed=10;
+					// 当用户同时按了ctrl+方向键，加速
+					if(event.ctrlKey){
+						speed=500;
+					}
+					switch(event.keyCode){
+						case 37:
+						box1.style.left=box1.offsetLeft-speed+"px";
+						break;
+						case 38:
+						box1.style.top=box1.offsetTop-speed+"px";
+						break;
+						case 39:
+						box1.style.left=box1.offsetLeft+speed+"px";
+						break;
+						case 40:
+						box1.style.top=box1.offsetTop+speed+"px";
+						break;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="box1"></div>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			// 创建一个正则表达式检查一个字符串是否含有aaa
+			// 量词
+			// 通过量词可以设置一个内容出现的次数
+			// 量词只对它前边的一个内容起作用
+			// {n} 正好出现n次
+			// {m,n}出现m-n次
+			// {m,}m次以上
+			// +至少一个，相当于{1,}
+			// *表示0个或多个，相当于{0,}
+			// ?表示0个多1个,相当于{0,1}
+			var reg=/a{3}/;
+			// ababab
+			reg=/(ab){3}/
+			reg=/ab{1,3}c/
+			reg=/ab+c/
+			reg=/ab*c/
+			reg=/ab?c/
+			console.log(reg.test("abbcc"));	
+			// 检查一个字符串是否以a开头
+			// ^表示开头
+			// $表示结尾
+			// 如果在正则表达式中同时使用^$则表示字符串必须完全符合正则表达式
+			reg=/^a/;
+			reg=/a$/;
+			reg=/^a$/;
+			reg=/^a|a$/;
+			console.log(reg.test("aaa"));
+			// 创建一个正则表达式，来检查一个字符串是否为一个合法的手机号
+			// 手机号规则
+			// 13627819280 11位
+			// 1.以1开头
+			// 2.第二位不能是3-9的任意数字
+			// 3.三位以后任意数字9个
+			// ^1 [3-9] [0-9]{9}$
+			var phoneStr="13627819280"
+			var phoneReg=/^1[3-9][0-9]{9}$/
+			console.log(phoneReg.test(phoneStr));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				position: absolute;
+				width:100px;
+				height:100px;
+				left: 0;
+				background-color: pink;
+				/* border: 1px solid red; */
+			}
+			span{
+				position: absolute;
+				display: block;
+				left: 0;
+				top: 200px;
+				width: 150px;
+				height: 150px;
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<button class="btn500">点我500才走</button>
+		<button class="btn800">点我800才走</button>
+		<div></div>
+		<span>123</span>
+		<script>
+			// 简单动画封装obj目标函数 target目标位置
+			// 给不同的元素指定了不同的定时器
+			var div=document.querySelector('div');
+			var span=document.querySelector('span');
+			var btn500=document.querySelector('.btn500');
+			var btn800=document.querySelector('.btn800');
+			function animate(obj,target,callBack){
+				// console.log(callBack);callBack=function(){}  调用的时候 callback()
+				// 当我们不断的点击按钮，这个元素的速度会越来越快，因为开启了太多的定时器
+				// 解决方案就是让我们只有一个定时器执行 
+				// 先清除以前的定时器，只有一个定时器
+				clearInterval(obj.timer)
+				obj.timer=setInterval(function(){
+					// 步长值写到定时器的里面
+					// 把步长改为整数 不要出现小数的问题
+					var step=(target-obj.offsetLeft)/10;
+					step=step>0 ? Math.ceil(step) :Math.floor(step);
+					if(obj.offsetLeft==target){
+						// 停止动画 本质是停止定时器
+						clearInterval(obj.timer);
+						// 回调函数写到定时器结束后面
+						if(callBack){
+							// 调用函数
+							callBack();
+						}
+					}else{
+						// 把1改为步长(目标值 - 现在的位置 ) / 10 做为每次移动的距离 步长
+						obj.style.left=obj.offsetLeft+step+'px';
+					}		
+				},15)
+			}
+			// 调用函数
+			// animate(div,500)
+			// animate(span,200)
+			btn500.addEventListener('click',function(){
+				animate(span,500,function(){
+					// alert(1)
+					span.style.backgroundColor='red';
+				});
+			})
+			btn800.addEventListener('click',function(){
+				animate(span,800);
+			})
+			//匀速动画 就是 盒子是当前的位置+固定的值（例如10	）
+			//缓动动画 就是 盒子是当前的位置+变化的值（目标-现在的位置）/10
+			
+		</script>
+	</body>
+</html>

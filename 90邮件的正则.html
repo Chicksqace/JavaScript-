@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script>
+			// 电子邮箱
+			//  hello  .nihao @     abc   .com.cn
+			// 任意字母数字下划线 .任意字母数字下划线@   任意字母数字    .任意字母（2-5位）      .任意字母（2-5位）
+			// \w{3,}            (\.\w+)* @			  [A-a0-9]+ 	   (\.[A-a{2-5}]){1,2}
+		var emaiReg=/^\w{3,}(\.\w+)*@[A-a0-9]+(\.[A-a{2-5}]){1,2}$/
+		var emali="abc@abc.com.123"
+		console.log(emaiReg.test(emali));
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style></style>
+		<script>
+			window,onload=function(){
+				var count=document.getElementById("count");
+				// js程序的执行速度是非常快的
+				// 如果希望一段程序，可以每间隔一段时间执行一次，可以使用定时调用
+				// setInterval()
+				// 定时调用
+				// 可以将一个函数，每隔一段时间执行一次
+				// 参数
+				// 1.回调函数，该函数每隔一段时间被调用一次
+				// 2每次调用间隔的时间，单位是毫秒
+				// 返回值
+				// 返回一个Number类型的数据
+				// 这个数字用来作为定时器的唯一标识
+				var num=1;
+				var timer=setInterval(function(){
+					count.innerHTML=num++;
+					if(num==11){
+						clearInterval(timer)
+					}
+				},1000);
+				// console.log(timer)
+				// clearInterval()可以用来关闭一定时器个
+				// 方法中需要一个定时器的标识作为参数，这样将关闭标识对应的定时器
+				// clearInterval(timer)
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="count">1</h1>
+	</body>
+</html>

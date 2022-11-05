@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#box1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				padding: 10px;
+				border: 10px solid yellow;
+			}
+			#box2{
+				padding-left: 20px;
+				width: 200px;
+				height: 200px;
+				background-color: aliceblue;
+			}
+			#box4{
+				width: 200px;
+				height: 300px;
+				background-color: #bfa;
+				overflow: auto;
+			}
+			#box5{
+				width: 450px;
+				height: 600px;
+				background-color: yellow;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var box1=document.getElementById("box1");
+				var btn01=document.getElementById("btn01");
+				var box4=document.getElementById("box4");
+				btn01.onclick=function(){
+					// clientWidth
+					// clientHeight
+					// 这俩个属性可以获取元素的可见宽度和高度
+					// 这些属性都是不带px的，返回都是一个数字，可以直接计算
+					//会获取元素的宽度和高度，包括内容区域和内边距
+					// 这些属性都是只读的，不能修改
+					// alert(box1.clientHeight);
+					// offsetHeight
+					// 获取元素的整个的宽度和高度，包括内容区，内边距和边框
+					// alert(box1.offsetHeight);
+					// offsetParent
+					// 可以用来获取当前元素的定位父元素
+					// 会获取到离当前元素最近的开启了定位的祖先元素
+					// 如果所有的祖先元素没有开启定位，就返回body
+					var op=box1.offsetParent;
+					// alert(op.id);
+					// offsetLeft
+					// 当前元素相对于其定位父元素的水平偏移量
+					// offsetTop
+					// 当前元素相对于其定位父元素的垂直偏移量
+					// scrollHeight
+					// scrollWidth
+					// 可以获取元素整个滚动区域的高度和宽度
+					// alert(box1.offsetLeft);
+					// alert(box4.scrollHeight)
+					// scrollLeft
+					// 可以获取水平滚动条的距离
+					// scrollTop
+					// 可以获取垂直滚动条的距离
+					// alert(box4.scrollLeft);
+					// alert(box4.scrollTop);
+					// alert(box4.clientHeight);//283
+					// 当满足scrollHeight-scrollTop<=clientHeight
+					// 说明垂直滚动条到底了
+					// 当满足scrollWidth-scrollLeft<=cilentWidth
+					// 说名水平滚动条滚动到底了
+					// alert(box4.scrollHeight-box4.scrollTop);//600
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<button id="btn01">点我</button>
+		<br>
+		<div id="box4">
+			<div id="box5">
+				
+			</div>
+		</div>
+		
+		<div id="box3" style="position: relative;">
+			<div id="box2" >
+				<div id="box1"></div>
+			</div>
+		</div>
+	</body>
+</html>

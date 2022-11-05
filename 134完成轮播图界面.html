@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#outer{
+				/* 设置宽和高 */
+				width:296px ;
+				height: 185px;
+				margin: 50px auto;
+				/* 设置背景颜色 */
+				background-color: yellowgreen;
+				/* 设置padding */
+				padding: 10px 0;
+				/* 相对定位 */
+				position: relative;	
+				/* 裁剪溢出的内容 */
+				overflow: hidden;
+			}
+			#imgList{
+				list-style: none;
+				/* 设置ul的宽度 */
+				/* width:1204px ; */
+				/* 开启绝对定位 */
+				position: absolute;
+				/* 设置偏移量 */
+				left: -296px;
+			}
+			#imgList li{
+				/* 设置浮动 */
+				float: left;
+				/* 设置左右外边距 */
+				margin: 0 10px;
+				
+			}
+			/* 设置导航按钮 */
+			#navDiv{
+				position: absolute;
+				bottom: 15px;
+				/* 设置left值
+				 outer 296
+				 navDiv宽度25*5*5=125
+				 296-125=171/2=85.5
+				 */
+				/* left: 85.5px; */
+			}
+			#navDiv a{
+				width: 15px;
+				height: 15px;
+				float: left;
+				background-color: #fff;
+				margin: 0 5px;
+				/* 透明度 */
+				opacity: 0.5;
+			}
+			#navDiv a:hover{
+				background-color: red;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var imgList=document.getElementById("imgList");
+				var imgArr=document.getElementsByTagName("img");
+				imgList.style.width=296*imgArr.length+"px";
+				// 设置导航按钮居中
+				var navDiv=document.getElementById("navDiv");
+				var outer=document.getElementById("outer")
+				navDiv.style.left=(outer.offsetWidth-navDiv.offsetWidth)/2+"px"
+				// 默认显示图片的索引
+				var index=0;
+			
+			// 获取所有的a
+				var allA=document.getElementsByTagName("a")
+				// 设置默认选中的效果
+				allA[index].style.background="red";
+			}
+		</script>
+	</head>
+	<body>
+		<!-- 创建一个外部的div，来作为大的容器 -->
+		<div id="outer">
+			<!-- 创建一个ul，来放置图片 -->
+			<ul id="imgList">
+				<li><img src="img/1.jpg" alt=""></li>
+				<li><img src="img/2.jpg" alt=""></li>
+				<li><img src="img/3.jpg" alt=""></li>
+				<li><img src="img/4.jpg" alt=""></li>
+			</ul>
+			<!-- 创建导航按钮 -->
+			<div id="navDiv">
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+			</div>
+		</div>
+	</body>
+</html>
